@@ -34,6 +34,7 @@ td {
   border-radius: 8px;
   background-color: #161b22;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .badge-box img {
@@ -55,6 +56,28 @@ td {
   border: 1px solid #30363d;  /* bordo in tema */
   border-radius: 5px;
   margin: 10px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Hover/click feedback per immagini certificate */
+a .cert-img:hover,
+.cert-img:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 15px rgba(88, 166, 255, 0.6);
+  cursor: pointer;
+  border-color: #58a6ff;
+}
+
+/* Focus state accessibile quando l'immagine è linkata */
+a:focus-visible .cert-img {
+  outline: 2px solid #58a6ff;
+  outline-offset: 3px;
+}
+
+/* Hover leggero sui badge (opzionale, coerente col tema) */
+.badge-box:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.55);
 }
 
 a {
@@ -104,5 +127,13 @@ hr {
   }
   .table-compact {
     border-spacing: 0;
+  }
+}
+
+/* Riduci animazioni per chi preferisce meno movimento */
+@media (prefers-reduced-motion: reduce) {
+  .cert-img,
+  .badge-box {
+    transition: none;
   }
 }
