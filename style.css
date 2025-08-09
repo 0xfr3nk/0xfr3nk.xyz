@@ -1,3 +1,4 @@
+/* Base theme (immutato dal tuo) */
 body {
   font-family: Arial, sans-serif;
   background-color: #0d1117;
@@ -7,16 +8,24 @@ body {
   text-align: center;
 }
 
+h1 {
+  margin: 0.3em 0 0.2em;
+}
+
 h2 {
   color: #58a6ff;
+  margin-top: 0.8em;
 }
 
 table {
   margin: 0 auto;
+  border-collapse: separate;
+  border-spacing: 10px;
 }
 
 td {
   padding: 10px;
+  vertical-align: top;
 }
 
 .badge-box {
@@ -55,4 +64,37 @@ a:hover {
 hr {
   margin: 40px 0;
   border: 1px solid #30363d;
+}
+
+/* piccole migliorie opzionali per le tabelle principali */
+.table-compact td {
+  min-width: 220px;
+}
+
+/* Responsive layout per tablet e mobile */
+@media (max-width: 1024px) {
+  .cert-img {
+    width: 300px;
+  }
+  .badge-box {
+    width: 180px;
+  }
+}
+
+@media (max-width: 768px) {
+  table, tr, td {
+    display: block;
+    width: 100%;
+  }
+  .cert-img {
+    width: 90%;
+    max-width: 350px;
+  }
+  .badge-box {
+    margin: 0 auto 20px;
+    width: 220px;
+  }
+  .table-compact {
+    border-spacing: 0;
+  }
 }
