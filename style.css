@@ -1,4 +1,4 @@
-/* Base theme (immutato dal tuo) */
+/* Base theme */
 body {
   font-family: Arial, sans-serif;
   background-color: #0d1117;
@@ -46,8 +46,13 @@ td {
   margin-top: 4px;
 }
 
+/* Certificati: stessa dimensione visiva */
 .cert-img {
   width: 400px;
+  height: 283px;              /* box uniforme per tutti */
+  object-fit: contain;        /* mantiene proporzioni senza deformare */
+  background-color: #161b22;  /* sfondo uniforme */
+  border: 1px solid #30363d;  /* bordo in tema */
   border-radius: 5px;
   margin: 10px;
 }
@@ -66,21 +71,23 @@ hr {
   border: 1px solid #30363d;
 }
 
-/* piccole migliorie opzionali per le tabelle principali */
+/* Migliorie tabelle */
 .table-compact td {
   min-width: 220px;
 }
 
-/* Responsive layout per tablet e mobile */
+/* Responsive tablet */
 @media (max-width: 1024px) {
   .cert-img {
     width: 300px;
+    height: 212px;
   }
   .badge-box {
     width: 180px;
   }
 }
 
+/* Responsive mobile */
 @media (max-width: 768px) {
   table, tr, td {
     display: block;
@@ -89,6 +96,7 @@ hr {
   .cert-img {
     width: 90%;
     max-width: 350px;
+    height: 220px;
   }
   .badge-box {
     margin: 0 auto 20px;
